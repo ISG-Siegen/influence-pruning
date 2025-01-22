@@ -1,0 +1,52 @@
+DATASET: amazon_luxury_beauty
+
+Crossfold-Validation (Strategy for pruned users: Most popular)
+__________________________________________________
+
+=> all Values are relative not absolute
+=> Strategy for pruned users: Most popular
+
+Pruning strategies:
+- 'influence_mean_based'
+- 'influence_cl_mean_based'
+- 'influence_diff_based'
+- 'influence_score_based'
+__________________________________________________
+
+User-User KNN
+- Baseline NDCG@10: 0.21946558893289733
+
+Optimized threshold: 
+- influence_diff_based: -0.00163 (NDCG@10: 0.219840298917024, std: 0.316571597725153)
+
+
+Item-Item KNN
+- Baseline NDCG@10: 0.23171008609903876
+
+Optimized Threshold:
+- influence_score_based: -0.00475 (NDCG@10: 0.232969321972571, std: 0.319157579941143)
+
+
+ALS
+Optimized Threshold (none above baseline):
+- influence_cl_mean_based: 0.00464
+
+
+Search Range: 
+User-User KNN
+# - 'Mean': 0 - 0.0012
+# - 'Clean Mean': 0 - 0.0012 
+# - 'Influence Diff': -0.02 - 0
+# - 'Influence Score': -0.003 - 0
+
+Item-Item KNN
+# - 'Mean': 0 - 0.002
+# - 'Clean Mean': 0 - 0.002
+# - 'Influence Diff': -0.007 - 0
+# - 'Influence Score': -0.005 - 0
+
+ALS Threshold
+# - 'Mean': 0 - 0.0045
+# - 'Clean Mean': 0 - 0.005
+# - 'Influence Diff': -0.008 - 0
+# - 'Influence Score': -0.011 - 0

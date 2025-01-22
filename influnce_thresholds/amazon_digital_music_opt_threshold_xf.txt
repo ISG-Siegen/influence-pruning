@@ -1,0 +1,52 @@
+DATASET: amazon_digital music
+
+Crossfold-Validation (Strategy for pruned users: Most popular)
+__________________________________________________
+
+=> all Values are relative not absolute
+=> Strategy for pruned users: Most popular
+
+Pruning strategies:
+- 'influence_mean_based'
+- 'influence_cl_mean_based'
+- 'influence_diff_based'
+- 'influence_score_based'
+__________________________________________________
+
+User-User KNN
+- Baseline NDCG@10: 0.07312864265646404
+
+Optimized threshold: 
+- influence_diff_based: -0.00066 (NDCG@10: 0.0736511063015623, std: 0.135267841435686)
+
+
+Item-Item KNN
+- Baseline NDCG@10: 0.07052456656855353
+
+Optimized Threshold:
+- influence_score_based: -0.00138 (NDCG@10: 0.0741396428039001, std: 0.1414230555021)
+
+
+ALS
+Optimized Threshold:
+- influence_cl_mean_based: 0.01241
+
+
+Search Range: 
+User-User KNN
+# - 'Mean': 0 - 0.0011
+# - 'Clean Mean': 0 - 0.0013 
+# - 'Influence Diff': -0.001 - 0
+# - 'Influence Score': -0.002 - 0
+
+Item-Item KNN
+# - 'Mean': 0 - 0.002
+# - 'Clean Mean': 0 - 0.002
+# - 'Influence Diff': -0.001 - 0
+# - 'Influence Score': -0.003 - 0
+
+ALS Threshold
+# - 'Mean': 0 - 0.02
+# - 'Clean Mean': 0 - 0.02
+# - 'Influence Diff': -0.008 - 0
+# - 'Influence Score': -0.03 - 0

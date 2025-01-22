@@ -1,0 +1,53 @@
+DATASET: ml100k
+
+Crossfold-Validation (Strategy for pruned users: Most popular)
+__________________________________________________
+
+=> all Values are relative not absolute
+=> Strategy for pruned users: Most popular
+
+Pruning strategies:
+- 'influence_mean_based'
+- 'influence_cl_mean_based'
+- 'influence_diff_based'
+- 'influence_score_based'
+__________________________________________________
+
+User-User KNN
+- Baseline NDCG@10: 0.3991718977657363
+
+Optimized threshold (none above baseline): 
+- influence_cl_mean_based: 0.0017 (NDCG@10: 0.397795658516554, std: 0.21319144752678)
+
+
+Item-Item KNN
+- Baseline NDCG@10: 0.350738106695312
+
+Optimized Threshold:
+- influence_score_based: -0.0081 (NDCG@10: 0.358139680597662, std: 0.200331925050325)
+
+
+ALS
+
+Optimized Threshold:
+- influence_mean_based: 0.0143
+
+
+Search Range: 
+User-User KNN
+# - 'Mean': 0 - 0.00125
+# - 'Clean Mean': 0 - 0.003 
+# - 'Influence Diff': -0.024 - 0
+# - 'Influence Score': -0.026 - 0
+
+Item-Item KNN
+# - 'Mean': 0 - 0.0023
+# - 'Clean Mean': 0 - 0.0045
+# - 'Influence Diff': -0.045 - 0
+# - 'Influence Score': -0.05 - 0
+
+ALS Threshold
+# - 'Mean': 0 - 0.018
+# - 'Clean Mean': 0 - 0.02
+# - 'Influence Diff': -0.097 - 0
+# - 'Influence Score': -0.11 - 0
